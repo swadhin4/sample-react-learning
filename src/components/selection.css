@@ -1,0 +1,387 @@
+/* =========================================================
+   Page
+   ========================================================= */
+
+.claim-information-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 24px 32px;
+  box-sizing: border-box;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+  color: #333333;
+}
+
+/* =========================================================
+   Page Header
+   ========================================================= */
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* =========================================================
+   Claim Summary
+   ========================================================= */
+
+.claim-summary {
+  width: 100%;
+  background: #f8f9fa;
+
+  /* Pink line visible at the top in the reference */
+  border-top: 4px solid #c35a83;
+
+  border-radius: 4px 4px 14px 14px;
+
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08);
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+.claim-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 48px;
+
+  padding: 8px 28px 4px 28px;
+  box-sizing: border-box;
+}
+
+.claim-number {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.claim-number-label {
+  font-size: 17px;
+  font-weight: 500;
+  color: #555555;
+}
+
+.claim-number-value {
+  font-size: 17px;
+  font-weight: 600;
+  color: #555555;
+}
+
+.leave-id-header {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.leave-id-label {
+  font-size: 17px;
+  font-weight: 500;
+  color: #555555;
+}
+
+.leave-id-value {
+  font-size: 17px;
+  font-weight: 600;
+  color: #555555;
+}
+
+/* =========================================================
+   Information Fields
+   ========================================================= */
+
+.claim-fields-row {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+
+  padding: 0 28px 12px 28px;
+
+  box-sizing: border-box;
+}
+
+.claim-field {
+  min-width: 105px;
+  flex: 1;
+
+  min-height: 60px;
+
+  padding: 8px 10px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e4e7;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.claim-field-label {
+  font-size: 12px;
+  line-height: 16px;
+
+  color: #5f6368;
+
+  margin-bottom: 2px;
+
+  font-weight: 500;
+}
+
+.claim-field-value {
+  font-size: 13px;
+  line-height: 17px;
+
+  color: #303030;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   Search Button
+   ========================================================= */
+
+.search-button {
+  flex: 0 0 auto;
+
+  min-width: 120px;
+  height: 38px;
+
+  align-self: center;
+
+  border: none;
+  border-radius: 20px;
+
+  background: #b75b7f;
+  color: #ffffff;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-button:hover {
+  background: #a84f73;
+
+  box-shadow:
+    0 3px 8px rgba(183, 91, 127, 0.25);
+}
+
+.search-button:active {
+  transform: translateY(1px);
+}
+
+.search-button:focus-visible {
+  outline: 2px solid #8f3e61;
+  outline-offset: 2px;
+}
+
+.search-icon {
+  font-size: 18px;
+  line-height: 1;
+  transform: rotate(-20deg);
+}
+
+/* =========================================================
+   Bottom Navigation
+   ========================================================= */
+
+.claim-navigation {
+  min-height: 50px;
+
+  display: flex;
+  align-items: stretch;
+
+  padding: 0 28px;
+
+  border-top: 1px solid #e2e5e8;
+
+  background: #f4f7f9;
+}
+
+.claim-nav-item {
+  position: relative;
+
+  min-width: 145px;
+
+  padding: 0 16px;
+
+  border: none;
+  background: transparent;
+
+  color: #575d63;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.claim-nav-item:hover {
+  color: #9d456a;
+  background: rgba(183, 91, 127, 0.04);
+}
+
+.claim-nav-item.active {
+  color: #a04a6d;
+  font-weight: 600;
+}
+
+/*
+ * Small pink indicator under active item
+ */
+.claim-nav-item.active::after {
+  content: '';
+
+  position: absolute;
+
+  left: 16px;
+  right: 16px;
+  bottom: 0;
+
+  height: 3px;
+
+  background: #b75b7f;
+  border-radius: 3px 3px 0 0;
+}
+
+.nav-value {
+  font-weight: 600;
+  color: #555555;
+}
+
+/* =========================================================
+   Responsive - Tablet
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .claim-fields-row {
+    flex-wrap: wrap;
+  }
+
+  .claim-field {
+    flex: 1 1 140px;
+  }
+
+  .search-button {
+    flex: 0 0 120px;
+  }
+}
+
+/* =========================================================
+   Responsive - Mobile
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .claim-information-page {
+    padding: 16px;
+  }
+
+  .claim-summary-header {
+    padding: 12px 16px;
+  }
+
+  .claim-fields-row {
+    padding: 0 16px 12px;
+    gap: 8px;
+  }
+
+  .claim-field {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+  }
+
+  .search-button {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .claim-navigation {
+    padding: 0 8px;
+
+    overflow-x: auto;
+
+    justify-content: flex-start;
+  }
+
+  .claim-nav-item {
+    min-width: 130px;
+    flex-shrink: 0;
+  }
+}
+
+/* =========================================================
+   Small Mobile
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 23px;
+  }
+
+  .claim-summary-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .leave-id-header {
+    align-self: flex-start;
+  }
+
+  .claim-field {
+    flex: 1 1 100%;
+  }
+
+  .claim-navigation {
+    min-height: 46px;
+  }
+
+  .claim-nav-item {
+    font-size: 12px;
+  }
+}
