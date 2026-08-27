@@ -4,129 +4,245 @@
 
 .letter-selection-page {
   width: 100%;
-  min-height: 100%;
-  padding: 20px 24px 30px;
+  min-height: 100vh;
+
   background: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   color: #333333;
 }
 
-/* Page heading */
 
-.page-title {
-  margin: 0 0 28px;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  color: #333333;
-}
+/* =====================================================
+   PAGE HEADER
+===================================================== */
 
-/* Main two-column layout */
-
-.letter-selection-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+.letter-selection-header {
   width: 100%;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 32px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e5e5;
 }
 
-/* Panels */
+.letter-selection-title {
+  font-size: 24px;
+  font-weight: 500;
 
-.letter-panel {
+  line-height: 1;
+
+  color: #333333;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.letter-selection-content {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 28px;
+
+  padding: 32px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.letter-card {
   min-width: 0;
-  height: 400px;
-  padding: 20px 20px 14px;
-  border: 1px solid #eeeeee;
-  background: #ffffff;
+
+  height: 430px;
 
   display: flex;
   flex-direction: column;
-}
-
-.panel-title {
-  margin-bottom: 18px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #333333;
-}
-
-/* Category dropdown */
-
-.category-select-wrapper {
-  position: relative;
-  width: 335px;
-  max-width: 100%;
-  margin-bottom: 20px;
-}
-
-.category-select-wrapper label {
-  position: absolute;
-  top: -7px;
-  left: 12px;
-  z-index: 1;
-
-  padding: 0 4px;
 
   background: #ffffff;
 
-  font-size: 12px;
-  color: #666666;
+  border: 1px solid #dedede;
+
+  border-radius: 2px;
+
+  overflow: hidden;
 }
 
-.category-select-wrapper select {
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.card-header {
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 28px;
+
+  font-size: 21px;
+  font-weight: 600;
+
+  color: #333333;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.card-content {
+  flex: 1;
+
+  padding: 28px;
+}
+
+
+/* =====================================================
+   CATEGORY FIELD
+===================================================== */
+
+.category-field {
+  position: relative;
+
   width: 100%;
-  height: 40px;
+  max-width: 420px;
 
-  padding: 0 38px 0 13px;
+  margin-bottom: 26px;
+}
 
-  border: 1px solid #bdbdbd;
+.category-field label {
+  position: absolute;
+
+  top: -8px;
+  left: 12px;
+
+  z-index: 2;
+
+  padding: 0 5px;
+
+  background: #ffffff;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  color: #555555;
+}
+
+.category-field select {
+  width: 100%;
+  height: 48px;
+
+  padding:
+    0 45px
+    0 14px;
+
+  border:
+    1px solid #a9a9a9;
+
   border-radius: 5px;
 
-  background: #ffffff;
+  background-color: #ffffff;
 
-  color: #666666;
-  font-size: 13px;
+  color: #555555;
+
+  font-size: 15px;
 
   outline: none;
+
+  cursor: pointer;
 
   appearance: none;
 
   background-image:
-    linear-gradient(45deg, transparent 50%, #555 50%),
-    linear-gradient(135deg, #555 50%, transparent 50%);
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #444444 50%
+    ),
+    linear-gradient(
+      135deg,
+      #444444 50%,
+      transparent 50%
+    );
+
   background-position:
-    calc(100% - 17px) 16px,
-    calc(100% - 12px) 16px;
+    calc(100% - 20px) 20px,
+    calc(100% - 14px) 20px;
+
   background-size:
-    5px 5px,
-    5px 5px;
+    7px 7px,
+    7px 7px;
+
   background-repeat: no-repeat;
 }
 
-.category-select-wrapper select:focus {
-  border-color: #8c5258;
+.category-field select:hover {
+  border-color: #888888;
 }
 
-/* Tables */
+.category-field select:focus {
+  border-color: #87545c;
+
+  box-shadow:
+    0 0 0 1px #87545c;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
 
 .letter-table,
 .favorites-table {
   width: 100%;
-  min-width: 0;
 }
+
+
+/* =====================================================
+   TABLE HEADER / ROW
+===================================================== */
 
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: 76px 1fr 1.1fr;
+
+  grid-template-columns:
+    75px
+    minmax(120px, 1fr)
+    minmax(150px, 1.2fr);
+
   align-items: center;
 }
 
 .table-header {
-  min-height: 30px;
+  height: 36px;
 
   font-size: 13px;
   font-weight: 600;
+
   color: #333333;
 }
 
@@ -134,23 +250,31 @@
   min-height: 44px;
 
   font-size: 13px;
+
   color: #444444;
 }
 
-.table-body {
-  width: 100%;
+
+/* =====================================================
+   TABLE COLUMNS
+===================================================== */
+
+.select-col {
+  padding-left: 2px;
 }
 
-.select-column {
-  padding-left: 5px;
+.category-col {
+  padding-right: 12px;
 }
 
-.category-column,
-.letter-column {
-  padding-right: 10px;
+.letter-col {
+  padding-right: 12px;
 }
 
-/* Radio button */
+
+/* =====================================================
+   RADIO BUTTON
+===================================================== */
 
 .table-row input[type="radio"] {
   width: 20px;
@@ -160,12 +284,24 @@
 
   appearance: none;
 
-  border: 2px solid #9a6268;
+  border:
+    2px solid #9a6068;
+
   border-radius: 50%;
+
+  background: #ffffff;
 
   cursor: pointer;
 
   position: relative;
+}
+
+.table-row input[type="radio"]:hover {
+  border-color: #75454c;
+}
+
+.table-row input[type="radio"]:checked {
+  border-color: #87525a;
 }
 
 .table-row input[type="radio"]:checked::after {
@@ -181,124 +317,214 @@
 
   border-radius: 50%;
 
-  background: #8d535b;
+  background: #87525a;
 }
 
-/* Favorites scrolling area */
+
+/* =====================================================
+   FAVORITES SCROLL
+===================================================== */
 
 .favorites-scroll {
   height: 245px;
+
   overflow-y: auto;
   overflow-x: hidden;
+
+  padding-right: 4px;
 }
 
-/* Scrollbar */
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
 
 .favorites-scroll::-webkit-scrollbar {
   width: 8px;
 }
 
 .favorites-scroll::-webkit-scrollbar-track {
-  background: #f2f2f2;
+  background: #f3f3f3;
 }
 
 .favorites-scroll::-webkit-scrollbar-thumb {
-  background: #999999;
-  border-radius: 5px;
+  background: #a3a3a3;
+
+  border-radius: 8px;
 }
 
-/* Footer */
+.favorites-scroll::-webkit-scrollbar-thumb:hover {
+  background: #858585;
+}
 
-.panel-footer {
-  margin-top: auto;
+
+/* =====================================================
+   CARD FOOTER
+===================================================== */
+
+.card-footer {
+  min-height: 70px;
 
   display: flex;
+
   justify-content: flex-end;
+
   align-items: center;
+
+  padding:
+    12px 28px;
+
+  background: #ffffff;
 }
 
-/* Buttons */
+
+/* =====================================================
+   BUTTON
+===================================================== */
 
 .outline-button {
-  height: 40px;
+  height: 42px;
 
-  padding: 0 22px;
+  display: inline-flex;
 
-  border: 1px solid #8d535b;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding:
+    0 23px;
+
+  border:
+    1px solid #87525a;
+
   border-radius: 22px;
 
   background: #ffffff;
 
-  color: #7d4a52;
+  color: #75464e;
 
   font-size: 13px;
   font-weight: 600;
 
   cursor: pointer;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-
   transition:
     background-color 0.2s ease,
+    border-color 0.2s ease,
     color 0.2s ease;
 }
 
 .outline-button:hover:not(:disabled) {
   background: #faf3f4;
+
+  border-color: #75464e;
+}
+
+.outline-button:active:not(:disabled) {
+  background: #f4e7e9;
 }
 
 .outline-button:disabled {
   opacity: 0.45;
+
   cursor: not-allowed;
 }
 
-.button-icon {
+
+/* =====================================================
+   BUTTON ICONS
+===================================================== */
+
+.plus-icon {
   font-size: 20px;
-  line-height: 1;
+
   font-weight: 400;
+
+  line-height: 1;
 }
 
 .delete-icon {
   font-size: 12px;
+
+  line-height: 1;
 }
 
-/* Right button */
+
+/* =====================================================
+   REMOVE BUTTON
+===================================================== */
 
 .remove-button {
   min-width: 235px;
 }
 
-/* Responsive */
 
-@media (max-width: 900px) {
-  .letter-selection-layout {
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .letter-selection-content {
     grid-template-columns: 1fr;
+
+    padding: 24px;
   }
 
-  .letter-panel {
+  .letter-card {
     height: auto;
-    min-height: 400px;
+
+    min-height: 430px;
   }
 }
 
-@media (max-width: 550px) {
-  .letter-selection-page {
+
+@media (max-width: 600px) {
+
+  .letter-selection-header {
+    height: 64px;
+
+    padding: 0 20px;
+  }
+
+  .letter-selection-title {
+    font-size: 21px;
+  }
+
+  .letter-selection-content {
     padding: 16px;
+
+    gap: 18px;
+  }
+
+  .card-header {
+    padding: 0 20px;
+
+    font-size: 19px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-footer {
+    padding: 12px 20px;
   }
 
   .table-header,
   .table-row {
-    grid-template-columns: 55px 1fr 1fr;
-  }
-
-  .letter-panel {
-    padding: 16px;
+    grid-template-columns:
+      55px
+      1fr
+      1fr;
   }
 
   .outline-button {
     width: 100%;
+  }
+
+  .remove-button {
+    min-width: 0;
   }
 }
