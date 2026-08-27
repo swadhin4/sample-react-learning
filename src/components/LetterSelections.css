@@ -1,0 +1,304 @@
+* {
+  box-sizing: border-box;
+}
+
+.letter-selection-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px 24px 30px;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+}
+
+/* Page heading */
+
+.page-title {
+  margin: 0 0 28px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #333333;
+}
+
+/* Main two-column layout */
+
+.letter-selection-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  width: 100%;
+}
+
+/* Panels */
+
+.letter-panel {
+  min-width: 0;
+  height: 400px;
+  padding: 20px 20px 14px;
+  border: 1px solid #eeeeee;
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title {
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* Category dropdown */
+
+.category-select-wrapper {
+  position: relative;
+  width: 335px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.category-select-wrapper label {
+  position: absolute;
+  top: -7px;
+  left: 12px;
+  z-index: 1;
+
+  padding: 0 4px;
+
+  background: #ffffff;
+
+  font-size: 12px;
+  color: #666666;
+}
+
+.category-select-wrapper select {
+  width: 100%;
+  height: 40px;
+
+  padding: 0 38px 0 13px;
+
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  color: #666666;
+  font-size: 13px;
+
+  outline: none;
+
+  appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #555 50%),
+    linear-gradient(135deg, #555 50%, transparent 50%);
+  background-position:
+    calc(100% - 17px) 16px,
+    calc(100% - 12px) 16px;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+}
+
+.category-select-wrapper select:focus {
+  border-color: #8c5258;
+}
+
+/* Tables */
+
+.letter-table,
+.favorites-table {
+  width: 100%;
+  min-width: 0;
+}
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 76px 1fr 1.1fr;
+  align-items: center;
+}
+
+.table-header {
+  min-height: 30px;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.table-row {
+  min-height: 44px;
+
+  font-size: 13px;
+  color: #444444;
+}
+
+.table-body {
+  width: 100%;
+}
+
+.select-column {
+  padding-left: 5px;
+}
+
+.category-column,
+.letter-column {
+  padding-right: 10px;
+}
+
+/* Radio button */
+
+.table-row input[type="radio"] {
+  width: 20px;
+  height: 20px;
+
+  margin: 0;
+
+  appearance: none;
+
+  border: 2px solid #9a6268;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+.table-row input[type="radio"]:checked::after {
+  content: "";
+
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  top: 3px;
+  left: 3px;
+
+  border-radius: 50%;
+
+  background: #8d535b;
+}
+
+/* Favorites scrolling area */
+
+.favorites-scroll {
+  height: 245px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+
+.favorites-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.favorites-scroll::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+.favorites-scroll::-webkit-scrollbar-thumb {
+  background: #999999;
+  border-radius: 5px;
+}
+
+/* Footer */
+
+.panel-footer {
+  margin-top: auto;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Buttons */
+
+.outline-button {
+  height: 40px;
+
+  padding: 0 22px;
+
+  border: 1px solid #8d535b;
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  color: #7d4a52;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.outline-button:hover:not(:disabled) {
+  background: #faf3f4;
+}
+
+.outline-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.button-icon {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.delete-icon {
+  font-size: 12px;
+}
+
+/* Right button */
+
+.remove-button {
+  min-width: 235px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .letter-selection-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .letter-panel {
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 550px) {
+  .letter-selection-page {
+    padding: 16px;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 55px 1fr 1fr;
+  }
+
+  .letter-panel {
+    padding: 16px;
+  }
+
+  .outline-button {
+    width: 100%;
+  }
+}
